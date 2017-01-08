@@ -1,3 +1,56 @@
-label {
-    color: red;
+@charset "utf-8";
+* {
+    margin:0;
+    padding:0;
+
+}
+
+html {height: 100%}
+
+body {
+    background: #ffffff url(bg33.jpg) no-repeat; /* Цвет фона и путь к файлу */
+    background-position: top;
+    color: #fff; /* Цвет текста */
+    text-align: center;
+    margin-left: 5%
+    font-family: TruthCYR, sans-serif;
+
+
+}
+
+
+body #Reg .form {
+    margin-top: 300px;
+    margin-left: 50%
+    position: absolute;
+
+}
+
+body #Reg .form #email{
+    margin-bottom: 30px;
+    margin-left: 5px;
+    outline-color: cornflowerblue;
+}
+
+body #Reg .form #password{
+    margin-bottom: 30px;
+    margin-left: 5px;
+}
+
+body #Reg .form #confirmpswd{
+    margin-bottom: 50px;
+    margin-left: 5px;
+}
+
+body #Reg .form #but1{
+    margin-top: 5px;
+    margin-bottom: 20px;
+    outline: none;
+
+}
+
+body #Reg #but2{
+    height: 57px;
+    width: 200px;
+    outline: none;
 }
