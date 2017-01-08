@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>New Order - {{ client.login }}</title>
+    </head>
+    <body>
+        {% if not accepted%}
+            <form method="POST" url="{% url 'restaurant:new_order' client.id %}">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <td></td>
+                        <td>Dish name</td>
+                        <td>Price</td>
+                    </tr>
+                {% for d in dishes %}
+                    <tr>
+                        <td><input type="checkbox" name="{{ d.dish_name }}"></td>
+                        <td>{{ d.dish_name }}</td>
+                        <td>{{ d.price }}</td>
+                    </tr>
+                {% endfor %}
+                </table>
+                <input type="submit">
+            </form>
+        {% else %}
+            <p>Accepted!!!</p>
+        {% endif %}
+            <p><a href="{% url 'restaurant:client' client.id %}">Back</a></p>
+    </body>
+</html>

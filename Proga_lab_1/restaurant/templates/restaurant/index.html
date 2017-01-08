@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Index page</title>
+    </head>
+    <body>
+    {% if is_login %}
+        <p><a href="{% url 'restaurant:logout' %}">Logout</a></p>
+        {% if user.is_admin %}
+            {% url 'restaurant:adminka' user.id as user_page %}
+        {% else %}
+            {% url 'restaurant:client' user.id as user_page %}
+        {% endif %}
+        <p><a href="{{ user_page }}">My page</a></p>
+    {% else %}
+        <p><a href="{% url 'restaurant:login' %}">Login</a></p>
+    {% endif %}
+        <p><a href="{% url 'restaurant:all_clients' %}">All clients</a></p>
+    </body>
+</html>
